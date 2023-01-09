@@ -12,7 +12,7 @@
 #
 #VARIÁVEIS:
 
-DATA_DO_DIA=$( date +%d-%m-%y )
+DATA_DO_DIA=$( date +%d-%m-%y--%H-%M-%S )
 NOME_ARQUIVO=backup-design
 NOME_COMPLETO="$NOME_ARQUIVO-$DATA_DO_DIA.tar.gz"
 CAMINHO="/home/chimpa/Documents/design"
@@ -39,6 +39,7 @@ mv $NOME_COMPLETO $CAMINHO_DESTINO
 echo "#############################################"
 echo "Backup Finalizado."
 echo "#############################################"
+
 #echo $NOME_COMPLETO
 #echo $NOME_ARQUIVO
 #echo $DATA_DO_DIA
