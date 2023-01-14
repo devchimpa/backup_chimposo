@@ -8,23 +8,25 @@
 #Feito por: DevChimpa dia 08 de Janeiro de 2023
 #contato: chimpadeveloper@gmail.com
 #
-#
+#MODIFICAÇÃO: 14/01/2023 - DevChimpa
+# Substituí a variável nome_arquivo para que ela pegue o nome da pasta local 
+#e substituí o caminho origem para que seja o local atual onde o script roda
 #
 #VARIÁVEIS:
 
 DATA_DO_DIA=$( date +%d-%m-%y--%H-%M-%S )
-NOME_ARQUIVO=backup-design
+NOME_ARQUIVO=$( pwd | rev | cut -d '/' -f1 | rev )
 NOME_COMPLETO="$NOME_ARQUIVO-$DATA_DO_DIA.tar.gz"
-CAMINHO="/home/chimpa/Documents/design"
+CAMINHO=*
 
 #COMANDOS:
 
-if [ ! -d /home/backups ]
-then    mkdir -p /home/backups
-        CAMINHO_DESTINO="/home/backups"
-else
-        CAMINHO_DESTINO="/home/backups"
-
+if [ ! -d /home/backups ] 
+then	mkdir -p /home/backups
+	CAMINHO_DESTINO="/home/backups"
+else	
+	CAMINHO_DESTINO="/home/backups"
+		
 fi
 
 tar -czpvf $NOME_COMPLETO $CAMINHO
@@ -39,7 +41,6 @@ mv $NOME_COMPLETO $CAMINHO_DESTINO
 echo "#############################################"
 echo "Backup Finalizado."
 echo "#############################################"
-
 #echo $NOME_COMPLETO
 #echo $NOME_ARQUIVO
 #echo $DATA_DO_DIA
