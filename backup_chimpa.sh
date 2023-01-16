@@ -29,13 +29,13 @@ else
 		
 fi
 
-tar -czpvf $NOME_COMPLETO $CAMINHO
+tar -czpvf "$NOME_COMPLETO" $CAMINHO
 echo "#############################################"
 echo "Backup sendo transferido, por favor aguarde..."
 echo "#############################################"
 sleep 5
 
-mv $NOME_COMPLETO $CAMINHO_DESTINO
+mv "$NOME_COMPLETO" $CAMINHO_DESTINO
 
 
 echo "#############################################"
